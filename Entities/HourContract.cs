@@ -1,3 +1,4 @@
+using System;
 namespace composition.Entities
 {
     public class HourContract

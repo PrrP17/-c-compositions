@@ -5,6 +5,7 @@ namespace composition.Entities
 {
     public class Worker
     {
+
         public string Name { get; set; }
         public WorkerLevel Level { get; set; }
         public double BaseSalary { get; set; }
@@ -17,11 +18,11 @@ namespace composition.Entities
         {
         }
 
-        public Worker(string name, WorkerLevel level, double basesalary, Departament departament)
+        public Worker(string name, WorkerLevel level, double baseSalary, Departament departament)
         {
             Name = name;
             Level = level;
-            BaseSalary = basesalary;
+            BaseSalary = baseSalary;
             Departament = departament;
         }
 
@@ -37,11 +38,11 @@ namespace composition.Entities
 
         public double Income(int year, int month)
         {
-            sum = BaseSalary;
+            double sum = BaseSalary;
 
-            foreach(HourContract contract in Contracts)
+            foreach (HourContract contract in Contracts)
             {
-                if(contract.Date.Year == year && contract.Date.Month == month)
+                if (contract.Date.Year == year && contract.Date.Month == month)
                 {
                     sum += contract.TotalValue();
                 }
@@ -52,6 +53,6 @@ namespace composition.Entities
 
 
 
-        
+
     }
 }
